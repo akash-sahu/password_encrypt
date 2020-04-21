@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+    int i,a;
+    char str[26]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+    char pass[26]={};	//Feed your old password here character wise
+    char key[26]={};	//Feed the desired key character wise
+    char npass[26]={};
+
+    for(i=0;i<strlen(pass);i++){
+        a=((pass[i]+key[i%strlen(key)])%26);
+        npass[i]=str[a];
+    }
+  
+    puts(npass);
+    return 0;
+}
