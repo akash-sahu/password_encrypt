@@ -7,12 +7,15 @@ int main()
     char pass[26]={};	//Feed your old password here character wise
     char key[26]={};	//Feed the desired key character wise
     char npass[26]={};
-
-    for(i=0;i<strlen(pass);i++){
+    printf("Enter your word: ");
+    gets(pass);
+    printf("\nEnter the key: ");
+    gets(key);
+    for(i=0;i<strlen(pass)-1;i++){
         a=((pass[i]+key[i%strlen(key)])%26);
         npass[i]=str[a];
     }
   
-    puts(npass);
+    printf("\nYour encrypted word: ");puts(npass);
     return 0;
 }
